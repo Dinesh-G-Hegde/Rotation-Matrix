@@ -2,21 +2,21 @@
 
  steps for the Matrix Rotation Tool project:
 
-##Step 1: Input Matrix Size
+## Step 1: Input Matrix Size
 
 Users provide the desired size of the matrix (e.g., 3x3, 4x4).
 
 
-##Step 2: Generate Grid
+## Step 2: Generate Grid
 Clicking the 'Generate' button creates a grid where users can input values for each cell in the matrix.
 
-##Step 3: Input Matrix Values
+## Step 3: Input Matrix Values
 Users populate the grid by entering values into each cell, forming the original matrix.
 
-##Step 4: Rotate the Matrix
+## Step 4: Rotate the Matrix
 After inputting values, users click the 'Rotate' button.
 
-##Output: Matrix Rotation
+## Output: Matrix Rotation
 The original matrix is rotated by 90 degrees in a clockwise direction.
 
 Both the original and rotated matrices are displayed step by step.
