@@ -71,3 +71,20 @@ pre {
     font-weight: bold;
     margin: 10px;
 }
+/* Add this style to format the matrix input cells */
+.cell {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 2px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* Add this style for the matrix container */
+.matrix-container {
+    margin-top: 20px;
+    text-align: center;
+}
