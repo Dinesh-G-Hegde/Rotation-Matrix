@@ -18,20 +18,27 @@ function rotateMatrix(matrix) {
 document.getElementById('generateMatrixButton').addEventListener('click', function () {
     const matrixSize = parseInt(document.getElementById('matrixSize').value);
     const matrixContainer = document.getElementById('matrixContainer');
-    
+
     // Clear existing matrix input
     matrixContainer.innerHTML = '';
 
-    // Create matrix input cells
+    // Create matrix input rows
     for (let i = 0; i < matrixSize; i++) {
+        // Create a div element for each row
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'matrix-row';
+
+        // Create matrix input cells for the current row
         for (let j = 0; j < matrixSize; j++) {
             const cell = document.createElement('input');
             cell.type = 'number';
             cell.className = 'cell';
             cell.placeholder = '0';
-            matrixContainer.appendChild(cell);
+            rowDiv.appendChild(cell);
         }
-        matrixContainer.appendChild(document.createElement('br'));
+
+        // Append the row to the matrix container
+        matrixContainer.appendChild(rowDiv);
     }
 });
 
