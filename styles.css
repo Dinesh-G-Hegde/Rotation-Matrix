@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+label {
+    font-weight: bold;
+}
+
+.matrix-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+#matrixInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    resize: none; /* Disable textarea resizing */
+}
+
+#rotateButton {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.matrix-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.original-matrix,
+.rotated-matrix {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 45%;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+#error-message {
+    color: red;
+    font-weight: bold;
+    margin: 10px;
+}

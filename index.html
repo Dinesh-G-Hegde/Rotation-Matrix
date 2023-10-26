@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matrix Rotation Tool</title>
+</head>
+<body>
+    <h1>Matrix Rotation Tool</h1>
+    
+    <div class="input-container">
+        <label for="matrixInput">Enter the matrix:</label>
+        <div class="matrix-input">
+            <textarea id="matrixInput" placeholder="e.g., 1 2 3; 4 5 6; 7 8 9"></textarea>
+        </div>
+        <button id="rotateButton">Rotate</button>
+    </div>
+    
+    <div class="matrix-container">
+        <div class="original-matrix">
+            <h2>Original Matrix</h2>
+            <pre id="originalMatrix"></pre>
+        </div>
+        <div class="rotated-matrix">
+            <h2>Rotated Matrix</h2>
+            <pre id="rotatedMatrix"></pre>
+        </div>
+    </div>
+    
+    <div id="error-message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
