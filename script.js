@@ -15,28 +15,64 @@ function rotateMatrix(matrix) {
     }
 }
 
+document.getElementById('generateMatrixButton').addEventListener('click', function () {
+    const matrixSize = parseInt(document.getElementById('matrixSize').value);
+    const matrixContainer = document.getElementById('matrixContainer');
+
+    // Clear existing matrix input
+    matrixContainer.innerHTML = '';
+
+    // Create matrix input rows
+    for (let i = 0; i < matrixSize; i++) {
+        // Create a div element for each row
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'matrix-row';
+
+        // Create matrix input cells for the current row
+        for (let j = 0; j < matrixSize; j++) {
+            const cell = document.createElement('input');
+            cell.type = 'number';
+            cell.className = 'cell';
+            cell.placeholder = '0';
+            rowDiv.appendChild(cell);
+        }
+
+        // Append the row to the matrix container
+        matrixContainer.appendChild(rowDiv);
+    }
+});
+
 document.getElementById('rotateButton').addEventListener('click', function () {
-    const input = document.getElementById('matrixInput').value;
+    const matrixSize = parseInt(document.getElementById('matrixSize').value);
+    const matrixContainer = document.getElementById('matrixContainer');
+    const cells = matrixContainer.querySelectorAll('.cell');
+    
+    // Create the matrix from the input cells
+    const matrix = [];
+    for (let i = 0; i < matrixSize; i++) {
+        const row = [];
+        for (let j = 0; j < matrixSize; j++) {
+            row.push(parseInt(cells[i * matrixSize + j].value));
+        }
+        matrix.push(row);
+    }
+
     const originalMatrixElement = document.getElementById('originalMatrix');
     const rotatedMatrixElement = document.getElementById('rotatedMatrix');
     const errorMessage = document.getElementById('error-message');
 
-    // Split the input into rows
-    const rows = input.trim().split(';');
-    const matrix = rows.map(row => row.trim().split(' ').map(Number));
-
     // Check if it's a valid matrix (all rows have the same number of columns)
-    const isValid = matrix.every(row => row.length === matrix[0].length);
+    const isValid = matrix.every(row => row.length === matrixSize);
 
     if (isValid) {
         errorMessage.textContent = '';
         // Display the original matrix
         originalMatrixElement.textContent = matrix.map(row => row.join(' ')).join('\n');
         // Rotate the matrix
-        rotateMatrix(matrix);
+        rotateMatrix(matrix); // Using the provided rotateMatrix function
         // Display the rotated matrix
         rotatedMatrixElement.textContent = matrix.map(row => row.join(' ')).join('\n');
     } else {
-        errorMessage.textContent = 'Invalid matrix format. Please use semicolons to separate rows and spaces to separate values.';
+        errorMessage.textContent = 'Invalid matrix format. Please ensure all rows have the same number of columns.';
     }
 });
